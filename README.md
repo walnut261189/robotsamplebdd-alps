@@ -21,9 +21,10 @@ GherkinLibrary – for BDD-style Gherkin syntax support
 
 ✅ Step 1: Install Requirements
 ```
-bash
-Copy
-Edit
+pip install robotframework
+pip install robotframework-seleniumlibrary
+pip install robotframework-gherkin
+pip install selenium
 
 ```
 ✅ Step 2: Folder Structure
