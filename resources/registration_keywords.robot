@@ -23,3 +23,7 @@ I click the register button
 
 I should see a successful registration message
     Page Should Contain    Registration Successful
+
+And the email "${email}" should be valid
+    ${is_valid}=    Validate Email Format    ${email}
+    Should Be True    ${is_valid}
