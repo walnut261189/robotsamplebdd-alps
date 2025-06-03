@@ -159,4 +159,30 @@ Then in your .robot file:
 Library    robotfile.py
 
 ```
+✅ Example: robotfile.py
+Place this in the project root:
+```
+# robotfile.py
 
+from robot.api.deco import keyword
+
+class RegistrationLibrary:
+
+    @keyword
+    def validate_email_format(self, email):
+        """Validate email format using regex."""
+        import re
+        pattern = r"[^@]+@[^@]+\.[^@]+"
+        return bool(re.match(pattern, email))
+
+```
+✅ To Use It in .robot Files
+Sample usage example of the python file in resources/registration_keywords.robot file
+Add to registration_keywords.robot:
+```
+Library    ../robotfile.py
+
+${is_valid}=    Validate Email Format    test@example.com
+Should Be True  ${is_valid}
+
+```
